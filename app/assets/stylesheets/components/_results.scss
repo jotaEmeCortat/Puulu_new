@@ -1,0 +1,146 @@
+﻿.message {
+  padding: 1rem;
+  background: var(--bs-gray-200);
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.results-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.2em;
+  // display: flex;
+  // justify-content: space-between;
+  // flex-wrap: wrap;
+}
+
+// .results-item:nth-child(6) {
+//   grid-column: 2 / 3;
+// }
+
+// .results-item {
+//   flex: 1 1 320px;
+//   // flex: 0 0 30%;
+// }
+
+.results-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.results-selector + label {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-image: url(https://www.premierleague.com/resources/rebrand/v7.128.2/i/elements/backgrounds/club-promo-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0.1rem solid var(--bs-gray-200);
+  // Label
+  color: black;
+  font-size: 0.875rem;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.results-selector + label::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(284.38deg,#7d1142,#a6245f);
+  z-index: 10;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.results-selector:focus + label,
+.results-selector:hover + label,
+.results-selector:checked + label {
+  color: #fff;
+  background: linear-gradient(284.38deg,#7d1142,#a6245f);
+}
+
+// #player_action_position_l2m + label {
+//   color: #FD1015;
+// }
+
+// #player_action_position_l2m:checked + label {
+//   background-color: #FD1015;
+//   border-color: #FD1015;
+// }
+
+// #PlayerAction_position_javascript + label {
+//   color: #FFC65A;
+// }
+
+// #PlayerAction_position_javascript:checked + label {
+//   background-color: #FFC65A;
+//   border-color: #FFC65A;
+// }
+
+// #PlayerAction_position_css + label {
+//   color: #62DDF5;
+// }
+
+// #PlayerAction_position_css:checked + label {
+//   background-color: #62DDF5;
+//   border-color: #62DDF5;
+// }
+
+.game_btn_confirme {
+  width: 100%;
+  font-weight: 700;
+  color: white;
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--bs-gray-200);
+  padding: 10px;
+  background: linear-gradient(284.38deg, #00be0a, #00d501);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(284.38deg, #00d501, #00be0a);
+    color: white;
+    font-size: 1rem;
+  }
+}
+
+.game_btn_cancel {
+  width: 100%;
+  font-weight: 700;
+  color: white;
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--bs-gray-200);
+  padding: 10px;
+  background: linear-gradient(284.38deg, #be000a, #ff0203);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(284.38deg, #ff0203, #be000a);
+    color: white;
+    font-size: 1rem;
+  }
+}
+
+.game_btn_end{
+  width: 100%;
+  font-weight: 700;
+  color: black;
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--bs-gray-200);
+  padding: 10px;
+  background: linear-gradient(284.38deg,#ffca5e,#f99808);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(284.38deg,#f99808,#ffca5e);
+    color: black;
+    font-size: 1rem;
+  }
+}

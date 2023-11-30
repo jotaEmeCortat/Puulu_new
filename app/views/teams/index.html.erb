@@ -1,0 +1,15 @@
+﻿<div class="cards">
+
+  <% @teams.each do |team| %>
+    <div class="">
+      <%# <%= cl_image_tag team.photo.key %>
+      <div class="">
+        <div>
+          <h2><%= link_to team.name, team_path(team) %></h2>
+          <p><%= team.category%> - <em><%= team.country%></em>  </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>

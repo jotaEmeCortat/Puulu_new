@@ -1,0 +1,74 @@
+.match-fixture__wrapper {
+  display: block;
+  text-decoration: none;
+}
+
+.match-fixture__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  align-items: center;
+  width: 100%;
+}
+
+.match-fixture__wrapper:focus .match-fixture__container,
+.match-fixture__wrapper:hover .match-fixture__container {
+  color: #fff;
+  background: linear-gradient(
+    98.5deg,
+    #05f0ff -46.16%,
+    #7367ff 42.64%,
+    #963cff 70.3%
+  );
+}
+
+.match-fixture__teams {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.match-fixture__team-name {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.match-fixture__score {
+  background: #37003c;
+  color: #fff;
+  font-weight: 700;
+}
+
+.match-fixture__score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  width: 3.5rem;
+  height: 1.75rem;
+}
+
+.match-fixture__tournament {
+  font-weight: 500;
+}
+
+.match-fixture__wrapper:focus .match-fixture__end-icon,
+.match-fixture__wrapper:hover .match-fixture__end-icon {
+  margin-right: 0.8rem;
+  margin-left: 1.6rem;
+}
+
+.match-fixture__end-icon {
+  display: block;
+  margin-left: 0.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.6rem;
+  transition: all 0.2s linear;
+}
+
+.fa-arrow-right:hover {
+  color: #fff;
+}

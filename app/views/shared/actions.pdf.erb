@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puulu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <%= wicked_pdf_stylesheet_link_tag "application" %>
+  <%# <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+</head>
+<body>
+
+<style>
+  /* CSS */
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    /* padding: 15px; */
+    text-align: center;
+    /* background-color: green; */
+  }
+
+  td{
+    padding: 2px;
+  }
+
+  th{
+    padding: 10px;
+  }
+
+  body{
+    font-family: 'Inter', sans-serif;
+  }
+
+  .play_by_play {
+  font-size: 0.75rem;
+}
+  </style>
+
+<div class="d-flex gap-5 mb-3 border-bottom">
+  <h4><%= @game.date.strftime("%A, %e %B %Y") %></h4>
+  <h4><%= @game.tournament %></h4>
+</div>
+
+<div class="align-content-center d-flex gap-5 justify-content-between mb-3">
+  <h4><%= @team.name %></span> 11 - 9 <span><%= @opponent_team.name %></h4>
+</div>
+
+<h3 class="fw-bold text-center">Play by play</h3>
+<%# <p class="text-center">(3:4, 3:2, 2:2, 3:1)</p> %>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Score</th>
+        <th>Team</th>
+        <th>Player</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% score_team_1 = 0 %>
+      <% score_team_2 = 0 %>
+      <% @game.player_actions.each do |action| %>
+        <% if action.goal? %>
+          <% score_team_1 += 1 if @game.team == action.team  %>
+          <% score_team_2 += 1 unless @game.team == action.team  %>
+        <% end %>
+        <tr>
+          <td><%= action.kind %></td>
+          <td><%= action.goal? ? "#{score_team_1} - #{score_team_2}" : "--"  %></td>
+          <td><%= action.team.name %></td>
+          <td><%= action.player.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

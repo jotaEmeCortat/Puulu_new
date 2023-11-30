@@ -1,0 +1,9 @@
+<div class="">
+  <% @teams.each do |team| %>
+    <h5><%= team.name %></h5>
+
+    <% team.players.each do |player| %>
+      <p class="ms-5"><%= link_to player.name, player_path(player) %></p>
+    <% end %>
+  <% end %>
+</div>

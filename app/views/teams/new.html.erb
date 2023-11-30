@@ -1,0 +1,43 @@
+﻿<%= render 'shared/page_header', children: "Create your category" %>
+
+<div class="container wrapper login-box ">
+  <%= simple_form_for @team do |f| %>
+    <div class="row justify-content-center">
+      <h2 class="bg-secondary h4 mb-4 px-3 py-2 fw-bold">
+        New category
+      </h2>
+      
+      <div class="col-12 col-lg-5 mb-5">
+        <div class="form-inputs">
+          <%# <%= f.input :name,
+                      label: 'Team Name',
+                      placeholder: "Team Name",
+                      required: true,
+                      autofocus: true %>
+
+          <%= f.input :category,
+                      label: 'Team Category',
+                      placeholder: "Team Category",
+                      required: true,
+                      as: :string %>
+
+          <%# <%= f.input :country,
+                      label: 'Team Country',
+                      placeholder: "Team Country",
+                      required: true,
+                      as: :string %>
+        </div>
+
+        <%= f.abyme_for(:players, limit: 13) do |abyme| %>
+          <%= abyme.records %>
+          <%= abyme.new_records %>
+          <div class="d-flex gap-2 w-100">
+            <%= add_associated_record(content: "Add Player +",
+                                      html: { class: "btn btn-secondary w-100"}) %>
+            <%= f.submit "Save Team", class: "btn btn-primary w-100" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+.season-so-far table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.season-so-far table thead tr {
+  font-weight: 700;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.season-so-far table thead tr th {
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.season-so-far table tbody tr:nth-of-type(2n) {
+  background-color: #f5f2f5;
+}
+
+.season-so-far td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

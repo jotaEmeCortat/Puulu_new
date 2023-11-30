@@ -1,0 +1,52 @@
+.player-content-container {
+  display: flex;
+}
+
+.player__wrapper {
+  display: block;
+  text-decoration: none;
+}
+
+.player__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  align-items: center;
+  width: 100%;
+
+}
+
+.player__wrapper:focus .player__container,
+.player__wrapper:hover .player__container {
+  color: #fff;
+  background: linear-gradient(
+    98.5deg,
+    #05f0ff -46.16%,
+    #7367ff 42.64%,
+    #963cff 70.3%
+  );
+}
+
+.player__wrapper:focus .match-fixture__end-icon,
+.player__wrapper:hover .match-fixture__end-icon {
+  margin-right: 0.8rem;
+  margin-left: 1.6rem;
+}
+
+.match-fixture__end-icon {
+  display: block;
+  margin-left: 0.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.6rem;
+  transition: all 0.2s linear;
+}
+
+.fa-arrow-right:hover {
+  color: #fff;
+}
+
+.flag__player {
+  width: 2rem;
+  display: flex;
+}

@@ -1,0 +1,5 @@
+meta_name: 'Puulu'
+meta_title: 'Puulu - Sublimez la performance de votre équipe de Water-Puulu'
+meta_description: "L'assistant digital favori des coachs de water-polo pour le suivi et l'optimisation de la performance"
+meta_image: 'logo@2x.png' # should exist in `app/assets/images/`
+twitter_account: '@PuuluApp' # required for Twitter Cards

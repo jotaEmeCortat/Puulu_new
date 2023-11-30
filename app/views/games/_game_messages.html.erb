@@ -1,0 +1,72 @@
+<%# TYPE_OF_ACTIONS = ['SHOT', 'TURNOVER FOUL', 'STEAL',
+                     'COUNTER ATTACK', 'EXCLUSION', 'REBOUND',
+                     'EXTRA PLAYER SHOT', 'PENALTY FOUL', 'DIRECT FREE THROW',
+                     'DOUBLE EXCLUSION'] %>
+
+<%# POSITIONS = ['L2M', 'C2M', 'R2M', 'BACK LEFT', 'BACK CENTER', 'BACK RIGHT', 'F6M'] %>
+
+<%# 6M Direct shot in free throw %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[8]) %>
+  <td><%= "6 meter direct shot in free throw - #{player_action.result}" %></td>
+<% end %>
+
+<%# Counter attack %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[3]) %>
+  <td><%= "Counter attack - #{player_action.result}" %></td>
+<% end %>
+
+<%# Double exclusion %>
+<% if player_action.kind == PlayerAction::TYPE_OF_ACTIONS[9] %>
+  <td><%= "Double exclusion - " %></td>
+<% end %>
+
+<%# Exclusion %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[4] && player_action.position == 'C2M') %>
+  <td><%= "Centre forward position exclusion - " %></td>
+<% end %>
+
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[4] && player_action.position != 'C2M') %>
+  <td><%= "Field exclusion - " %></td>
+<% end %>
+
+<%# Extra player shot %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[6]) %>
+  <td><%= "Extra player shot - #{player_action.result}" %></td>
+<% end %>
+
+<%# Penalty foul %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[7]) %>
+  <td><%= "Penalty foul - " %></td>
+<% end %>
+
+<%# Rebound %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[5]) %>
+  <td><%= "Rebound - " %></td>
+<% end %>
+
+<%# Shot %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[0] && player_action.position == 'C2M') %>
+  <td><%= "Centre shot - #{player_action.result}" %></td>
+<% end %>
+
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[0] && player_action.position != 'C2M') %>
+  <td><%= "Action shot - #{player_action.result}" %></td>
+<% end %>
+
+<%# Steal %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[2] && player_action.position == 'C2M') %>
+  <td><%= "Steal centre forward - " %></td>
+<% end %>
+
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[2] && player_action.position != 'C2M') %>
+  <td><%= "Steal - " %></td>
+<% end %>
+
+<%# Turnover foul %>
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[1] && player_action.position == 'C2M') %>
+  <td><%= "Turnover foul centre forward - " %></td>
+<% end %>
+
+<% if (player_action.kind == PlayerAction::TYPE_OF_ACTIONS[1] && player_action.position != 'C2M') %>
+  <td><%= "Turnover foul - " %></td>
+<% end %>

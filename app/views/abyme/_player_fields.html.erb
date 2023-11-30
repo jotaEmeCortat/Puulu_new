@@ -1,0 +1,54 @@
+﻿<div data-controller="visibility">
+  <div data-visibility-target="hideable">
+    <h2 class="bg-secondary h4 mb-4 px-3 py-2 fw-bold">
+      New Player
+    </h2>
+
+
+    <div class="">
+      <%= f.input :name,
+                  label: "Player Name",
+                  placeholder: "Player Name",
+                  required: true,
+                  autofocus: true %>
+                  <%# # input_html: {data: {visibility_target: "nameInput"}} %>
+
+      <%= f.input :nationality,
+                  label: "Player Nationality",
+                  placeholder: "Player Nationality",
+                  required: true %>
+
+      <%= f.input :birthdate,
+                  label: "Player Birth Date",
+                  placeholder: "Player Birth Date",
+                  required: true,
+                  start_year: Time.now.year - 123, end_year: Time.now.year - 18, order: %i(year) %>
+
+      <%= f.input :gender,
+                  collection: ['Female', 'Male'],
+                  label: "Player Gender",
+                  placeholder: "Player Gender",
+                  required: true %>
+
+      <%= f.input :handedness,
+                  collection: ['Left-Handed', 'Right-Handed'],
+                  label: "Player Handedness",
+                  placeholder: "Player Handedness",
+                  required: true %>
+
+      <%= f.input :position,
+                  collection: ['Field Player', 'Goalkeeper'],
+                  label: "Player Position",
+                  placeholder: "Player Position",
+                  required: true %>
+
+      <%# <%= f.input :description, as: :text, :input_html => { 'rows' => 1 } %>
+      <%# <%= f.input :photo, as: :file %>
+      <%# <%= f.input :available %>
+      <%= f.hidden_field :_destroy %>
+        <%= remove_associated_record(tag: :div, html: { class: "pe-auto fw-bold mb-3 link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover", style:"cursor:pointer" }) do %>
+        Cancel <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

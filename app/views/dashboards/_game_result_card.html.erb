@@ -1,0 +1,18 @@
+<li class="border-bottom">
+  <%= link_to result_game_path(game), class: 'match-fixture__wrapper' do %>
+    <div class="match-fixture__container">
+
+      <div class="match-fixture__teams col-6">
+        <div class="match-fixture__team"><%= game.team.name %></div>
+        <div class="match-fixture__score"> <%= game.scores[:score] %> <div>-</div> <%= game.scores[:opponent_score] %> </div>
+        <div class="match-fixture__team"><%= game.opponent_team.name %></div>
+      </div>
+
+      <div class="match-fixture__tournament col-4"><%= game.tournament %></div>
+
+      <div class="match-fixture__end-icon col-2">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  <% end %>
+</li>

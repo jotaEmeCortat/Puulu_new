@@ -1,0 +1,25 @@
+﻿<div class="container">
+  <div class="row mb-3">
+    <div class="col-3">
+      <h3 class="fw-bold text-center"><%= @team.name.scan(/[A-Z\d]/).join %></h3>
+    </div>
+
+    <div class="col-6 text-center">
+      <%# pop-outin %>
+      <div class="message">
+        <% if @player_actions.any? %>
+          <%= render "game_messages", player_action: @player_actions.last %>
+          <%= @player_actions.last.player.name %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <h3 class="fw-bold text-center"><%= @opponent_team.name.scan(/[A-Z\d]/).join %></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= render "games/form", game: @game %>
+  </div>
+</div>

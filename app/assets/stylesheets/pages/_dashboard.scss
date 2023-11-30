@@ -1,0 +1,53 @@
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: white;
+  background-color: black;
+}
+
+.stats__top-list {
+  background-image: url(https://www.premierleague.com/resources/rebrand/v7.128.2/i/elements/backgrounds/club-promo-bg.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1;
+  border-radius: 0.5rem;
+  height: 7.5rem;
+}
+
+.stats__regular-list {
+  li {
+    flex: 1;
+    padding: 0;
+  }
+}
+
+.all-stats__list-container {
+  border-radius: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+
+.all-stats__list-container:before {
+  background: linear-gradient(284.38deg, #ffc107, #ffeb3b);
+}
+
+.all-stats__list-container:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -0.1rem;
+  left: -0.1rem;
+  right: -0.1rem;
+  height: 0.4rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transform: rotate(180deg);
+}
+
+.all-stats__list-container {
+  border: 0.1rem solid var(--bs-gray-100);
+
+  > div {
+    border-bottom: 0.1rem solid var(--bs-gray-100);
+  }
+}

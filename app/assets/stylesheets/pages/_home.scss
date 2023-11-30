@@ -1,0 +1,83 @@
+.home-header {
+  background-size: cover;
+  background-position: center;
+  display: block;
+  position: relative;
+  height: 90vh;
+  border-bottom: 0.4rem solid #ebff00;
+}
+
+.content-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.title-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 15%;
+
+  padding: 2rem;
+  height: 25rem;
+  width: 35rem;
+  min-height: 5rem;
+
+  opacity: 0.8;
+}
+
+.button-container {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  border-bottom: 0.4rem solid #ebff00;
+  display: flex;
+  align-items: center;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  text-transform: uppercase;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid #4a4a4a;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  font-weight: lighter;
+  background: linear-gradient(284.38deg, #ffca5e, #f99808);
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.btn-ghost:hover {
+}
+
+.btn-home {
+  padding: 1rem 1.5rem !important;
+  font-size: 1.5rem !important;
+}

@@ -1,0 +1,56 @@
+﻿<%= render 'shared/page_header', children: "New game" %>
+
+
+
+<div class="container wrapper login-box">
+  <div class="row justify-content-center">
+    <h2 class="bg-secondary h4 mb-4 px-3 py-2 fw-bold">
+      Start a new game
+    </h2>
+
+    <div class="col-5 mb-5">
+      <%= simple_form_for [@game] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :date,
+                      label: "Game date",
+                      placeholder: "Game date",
+                      autofocus: true,
+                      as: :string,
+                      input_html: {
+                        data: { controller: "datepicker" }
+                      } %>
+
+          <%= f.association :team,
+                            prompt: 'Team category',
+                            collection: current_user.teams%>
+
+          <%= f.input :tournament,
+                        label: "Tournament",
+                        placeholder: "Tournament",
+                        as: :string,
+                        required: false %>
+
+          <%= f.input :location,
+                      label: "Location",
+                      placeholder: "Location",
+                      as: :string %>
+
+          <%= f.input :opponent_team,
+                      label: "Opponent's team name",
+                      placeholder: "Opponent's team name",
+                      as: :string,
+                      required: true %>
+
+          <%= f.input :opponent_player,
+                        label: "Opponent's player name",
+                      placeholder: "Opponent's player name",
+                      as: :string %>
+        </div>
+
+        <div class="d-flex form-actions justify-content-center mt-5">
+          <%= f.submit "Create new game", class: "btn btn-primary col-12 col-md-8" %>
+        </div>
+      <% end %>
+  </div>
+  </div>
+</div>

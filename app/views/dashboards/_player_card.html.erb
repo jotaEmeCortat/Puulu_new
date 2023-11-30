@@ -1,0 +1,21 @@
+<div class="border-bottom">
+  <%= link_to player_path(player), class: 'player__wrapper' do %>
+    <div class="player__container">
+      <div class="col-5" style="margin-left: 1rem"><%= player.name %></div>
+      <div class="col" class="ps-4"><%= player.position %></div>
+      <div class="col" class="ps-4"><%= player.handedness %></div>
+      <div class="col"><%= player.birthdate %></div>
+      <div class="col-2">
+        <span class="d-flex gap-2">
+          <span class="flag__player">
+            <img class="w-100" src="https://resources.premierleague.com/premierleague/flags/FR@x2.png">
+          </span>
+          <span><%= player.nationality %></span>
+        </span>
+      </div>
+      <span class="col-1 match-fixture__end-icon">
+        <i class="fa-solid fa-arrow-right"></i>
+      </span>
+    </div>
+  <% end %>
+</div>

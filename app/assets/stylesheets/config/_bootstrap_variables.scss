@@ -1,0 +1,59 @@
+// This is where you override default Bootstrap variables
+// 1. Find all Bootstrap variables that you can override at the end of each component's documentation under the `Sass variables` anchor
+// e.g. here are the ones you can override for the navbar https://getbootstrap.com/docs/5.2/components/navbar/#sass-variables
+// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
+// 3. You can override them below!
+
+/* Breakpoint	      Class infix	        Dimensions
+Extra small	          None	            <576px
+Small	                 sm	              ≥576px
+Medium	               md	              ≥768px
+Large	                 lg	              ≥992px
+Extra large	           xl	              ≥1200px
+Extra extra large	     xxl	            ≥1400px
+ */
+
+$enable-negative-margins: true;
+
+// General style
+$font-family-sans-serif: $body-font;
+$headings-font-family: $headers-font;
+$body-bg: $white;
+$font-size-base: 1rem;
+
+// Colors
+$body-color: $black;
+$body-secondary-bg: $gray;
+$primary: $black;
+$secondary: $secondary;
+$success: $green;
+$info: $yellow;
+$danger: $red;
+$warning: $orange;
+
+// Buttons & inputs' radius
+$border-radius: 2px;
+$border-radius-lg: 2px;
+$border-radius-sm: 2px;
+
+// Override other variables below!
+
+// Container
+/* $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+  xxl: 2560px,
+); */
+
+// Typography
+$h1-font-size: $font-size-base * 4 !default;
+$h2-font-size: $font-size-base * 3 !default;
+$h3-font-size: $font-size-base * 2 !default;
+$h4-font-size: $font-size-base * 1.125 !default;
+$h5-font-size: $font-size-base !default;
+$h6-font-size: $font-size-base * 0.875 !default;
+
+$display-font-weight: 700;

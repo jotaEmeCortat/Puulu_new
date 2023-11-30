@@ -1,0 +1,24 @@
+.form-control {
+  border: 1px solid rgb(118, 118, 111);
+  background-color: $light-gray;
+
+  &:focus {
+    background-color: $white;
+    border-color: rgb(232, 232, 232);
+    box-shadow: 0 0 0 0.1rem $black;
+  }
+
+  &:placeholder {
+    font-size: 0.875rem;
+    color: red;
+  }
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+abbr[title] {
+  color: $pink;
+}

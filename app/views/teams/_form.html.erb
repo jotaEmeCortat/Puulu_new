@@ -1,0 +1,38 @@
+﻿<%= simple_form_for team do |f| %>
+  <div class="row gy-2 gx-3 justify-content-sm-between">
+    <div class="col-sm-3">
+      <%= f.input :name, placeholder: "Team Name", label: false %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.input :category, placeholder: "Category", label: false, as: :string %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.input :country, placeholder: "Country", label: false, as: :string %>
+    </div>
+
+    <div class="col-auto">
+      <%= f.submit "Save Team", class: "btn btn-primary" %>
+    </div>
+  </div>
+
+
+  <div class="mt-1 gy-2 gx-3 justify-content-sm-between">
+    <div class="">
+      <%= f.abyme_for(:players, limit: 13) do |abyme| %>
+        <div class="col-auto">
+          <%= abyme.records %>
+        </div>
+
+        <div class="col-auto">
+        <%= abyme.new_records %>
+        </div>
+
+        <div class="col-auto">
+        <%= add_associated_record(content: "Add Player", html: { class: "btn btn-outline-primary d-flex col-auto"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

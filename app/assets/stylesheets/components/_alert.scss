@@ -1,0 +1,21 @@
+.alert {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+
+  background: linear-gradient(
+    98.5deg,
+    #05f0ff -46.16%,
+    #7367ff 42.64%,
+    #963cff 70.3%
+  );
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+}
+
+.alert-dismissible .btn-close svg {
+  color: white;
+  font-weight: 700;
+}

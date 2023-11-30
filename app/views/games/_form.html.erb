@@ -1,0 +1,86 @@
+﻿  <%= simple_form_for [@game, @player_action], html: { data: { controller: "game"} } do |f| %>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="row">
+            <%= f.input :player_id,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'players-wrapper',
+                        item_wrapper_class: 'players-item',
+                        input_html: { class: 'players-selector', data: { game_target: 'player', action: 'change->game#togglePlayer' } },
+                        collection: @players.first(7).map.with_index { |player, index| [ "#{index + 1} - #{player.name}", player.id ] },
+                        label_method: :first, value_method: :last %>
+          </div>
+          <%= f.submit 'CONFIRM ACTION', class: 'btn game_btn_confirme w-100 mb-3' %>
+          <%= link_to "CANCEL ACTION", game_path, class: 'btn game_btn_cancel w-100'%>
+        </div>
+
+        <div class="col-6">
+          <div class="row d-flex">
+            <%= f.input :kind,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'actions-wrapper',
+                        item_wrapper_class: 'actions-item',
+                        input_html: { class: 'actions-selector', data: { game_target: 'kind', action: 'change->game#toggleKind' } },
+                        collection: PlayerAction::TYPE_OF_ACTIONS %>
+          </div>
+
+          <div class="row justify-content-center">
+            <fieldset class="">
+              <%= f.input :position,
+                          as: :radio_buttons,
+                          legend_tag: false,
+                          collection_wrapper_tag: 'div',
+                          collection_wrapper_class: 'position-wrapper',
+                          item_wrapper_class: 'position-item',
+                          input_html: { class: 'position-selector', data: { game_target: 'position', action: 'change->game#toggleResult' } },
+                          # label_method: lambda { |position| render "games/position", position: position },
+                          collection: PlayerAction::POSITIONS %>
+            </fieldset>
+          </div>
+
+          <%# <div class="row">
+            <%= f.input :kind_extra,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'actions-wrapper-down',
+                        item_wrapper_class: 'actions-item',
+                        input_html: { class: 'actions-selector', data: { game_target: 'kindExtra', action: 'change->game#toggleKind' } },
+                        collection: PlayerAction::TYPE_OF_ACTIONS.last(4) %>
+           <%# </div> %>
+
+          <div class="row mt-2">
+            <%= f.input :result,
+                        disabled: true,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'results-wrapper',
+                        item_wrapper_class: 'results-item',
+                        input_html: { class: 'results-selector', data: { game_target: 'result', action: 'change->game#toggleResult' } },
+                        collection: PlayerAction::SHOT_RESULTS %>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="row">
+            <%= f.input :opponent_id,
+                        as: :radio_buttons,
+                        legend_tag: false,
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'opponents-wrapper',
+                        item_wrapper_class: 'opponents-item',
+                        input_html: { class: 'opponents-selector', data: { game_target: 'opponent', action: 'change->game#togglePlayer' } },
+                        collection: @opponents.first(7).map.with_index { |opp, index| [ "#{index + 1} - #{opp.name.split('-').first}", opp.id ] },
+                        label_method: :first, value_method: :last %>
+          </div>
+          <%= link_to "END GAME", dashboard_path, class: 'btn game_btn_end w-100' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
